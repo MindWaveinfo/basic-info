@@ -12,15 +12,16 @@ app.use(express.static("views"));
 
 // ---------- DATABASE CONFIG ----------
 // Replace with your MSSQL details
-const dbConfig = {
-  user: "Sai_123456",        // e.g. sa
-  password: "123@Thota",
-  server: "192.168.29.102",    // e.g. myserver.database.windows.net
-  database: "TestDB",
+const config = {
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  server: process.env.DB_SERVER,
+  database: process.env.DB_DATABASE,
+  port: parseInt(process.env.DB_PORT) || 1433,
   options: {
-    encrypt: true,              // Use true for Azure/Render MSSQL
-    trustServerCertificate: true
-  }
+    encrypt: true,
+    trustServerCertificate: true,
+  },
 };
 
 // ---------- ROUTES ----------
