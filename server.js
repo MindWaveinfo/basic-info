@@ -12,7 +12,7 @@ app.use(express.static("views"));
 
 // ---------- DATABASE CONFIG ----------
 // Replace with your MSSQL details
-const config = {
+const dbconfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   server: process.env.DB_SERVER,
